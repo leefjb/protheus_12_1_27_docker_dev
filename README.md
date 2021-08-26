@@ -1,8 +1,7 @@
-# Dockerizando ambiente Protheus para devs
+Projeto baseado no projeto https://github.com/houstonsantos/DevDockerProtheus
 
-Projeto consiste na criação de dois container Docker um do Appserver do Protheus 12.1.27 e do Licenserver e o segundo com Banco de dados (Postgres ou MSSQL) e DBAccess com dicioário de dados no banco de dados. A ideia é levantar um ambiente de testes do ERP e para desenvolvimento e estudo, rápido e prático para desenvolvedores e analistas que não tenham conhecimento aprofundado da infra do Protheus, redes e ate mesmo do próprio Docker.
-
->OBS: Este senário em hipótese nenhuma deve ser utilizado em ambientes de produção, pois a finalidade do Docker e termos processos únicos por containers, podendo ter exeções em alguns casos. Para hambientes de produção o indicado e usar o **Docker Compose** com Swarm**, criando um Cluster Swarm.
+- Separei o Licenserver do Appserver e deixei o DB e o Appserver dependentes do Licenserver ter inciado
+- deve-se baixar os binários da TOTVS e descompactados na pasta protheus. Cada um deles deve conter uma pasta especifica, verifique nos dockerfiles quais são as pastas que são efetuadas as copias.
 
 ## Versões dos binários utilizados
 
@@ -12,9 +11,9 @@ Projeto consiste na criação de dois container Docker um do Appserver do Prothe
 
 20-10-16-BRA-DICIONARIOS_COMPL_12_1_27
 
-20-11-13-DBACCESS_LINUX_X64_BUILD-20200606.TAR
+21-07-07-TOTVS_DBACCESS_LINUX_X64-BUILD_20.1.1.4.TAR
 
-20-12-14-P12_APPSERVER_BUILD-19.3.1.4_LINUX_X64.TAR
+21-06-15-P12_APPSERVER_BUILD-19.3.1.7_LINUX_X64.TAR
 
 20-10-16-REPOSITORIO_DE_OBJETOS_BRASIL_12_1_27_TTTP120.RPO
 
@@ -30,7 +29,7 @@ Projeto consiste na criação de dois container Docker um do Appserver do Prothe
 `docker compose up - O comomado irá realizar o build e subir os containers.`
 
 ## 3. Configurando smartclient
-Após levantar os containers devemos configurar nosso smartclient local para acesso. Editando o arquivo smartclient.ini, deixeo dessa forma ou edite o seu criando parametrização adicionais.
+Após levantar os containers devemos configurar nosso smartclient local para acesso. Editando o arquivo smartclient.ini, deixe o dessa forma ou edite o seu criando parametrização adicionais.
 
 ```
 [config]
