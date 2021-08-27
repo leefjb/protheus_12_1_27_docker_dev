@@ -29,7 +29,7 @@ COPY protheus/tttp120.rpo ./protheus/apo
 COPY conf-files/appserver.ini ./protheus/bin/appserver
 
 # Expondo portas de conexão http, Appserver, WebApp, Licenserver e Help
-EXPOSE 80 2345 4321 8079
+EXPOSE 8080 2345 4321 8079
 
 # Iniciando serviços Licenserver e Appserver
 CMD /opt/entrypoint-appserver.sh

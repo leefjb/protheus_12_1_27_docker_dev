@@ -96,11 +96,11 @@ services:
          IP_LICENSERVER: ${IP_LICENSERVER}
          AMBIENTE: ${AMBIENTE}
       restart: always
-      ports: 
-         - 80:80
+      ports:          
          - 2345:2345
          - 4321:4321
          - 8079:8079
+         - 8080:8080
       networks: 
          totvs:
             ipv4_address: ${IP_APPSERVER}
